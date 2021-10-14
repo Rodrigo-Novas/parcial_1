@@ -36,6 +36,7 @@ int main()
     int idClientePedidos;
     float kilo;
     int auxPrintMasPendientes;
+    int auxPrintMasCompletos;
 //    //Mock hardcodeado
     eCliente listClientes[MAXCLIENT]= {{0,FULL,"DADAPHONE","30111221413","SAENZ 1234", "CABA"},
                                             {1,FULL,"FABRIC","30445566776","FALCAO 289","CABA"},
@@ -250,6 +251,15 @@ int main()
                 system("cls");
                 break;
             case 12:
+                printf("\n-----Max pedidos completados-------\n");
+                auxPrintMasCompletos = masPedidosCompletados(listClientes, listPedidos);
+                if(auxPrintMasCompletos  == -1){
+                    printf("No se encuentran clientes!\n");
+                }
+                system("pause");
+                system("cls");
+                break;
+            case 13:
                 printf("\n-----Clientes-------\n");
                 auxPrintClientes = printClientes(listClientes);
                 if(auxPrintClientes == -1){
@@ -263,7 +273,7 @@ int main()
                 system("pause");
                 system("cls");
                 break;
-            case 13:
+            case 14:
                 printf (" Gracias por utilizar el sistema! \n");
                 break;
 
@@ -272,7 +282,7 @@ int main()
                 system("pause");
                 break;
                 }
-        }while(option!=13);
+        }while(option!=14);
         return option;
     }
 }

@@ -251,17 +251,74 @@ int masPedidosPendientes(eCliente* listCliente, ePedido* listPedidos)
 	    	            		maximoPosicion = i;
 	    	            	}
 
-	    	            	pendientes=0;
 
 	    	            }
 
 	    	        }
 
-	    	printf("\nEl cliente con mas pedidos pendientes es: %s\nla cantidad de pendientes es: %d\n",listCliente[maximoPosicion].nombre,maximo);
+	    	printf("\nEl cliente con mas pedidos pendientes es: %s\n",listCliente[maximoPosicion].nombre);
 	        retorno=0;
 	    }
 	    return retorno;
 }
 
+
+
+
+
+/** \brief Cliente con mas pedidos completados
+ *
+ * \param ePedido* arrayAux
+ * \return void
+ *
+ */
+
+
+int masPedidosCompletados(eCliente* listCliente, ePedido* listPedidos)
+{
+
+
+	int retorno=-1;
+	int completado = 0;
+	int maximo = 0;
+	int maximoPosicion;
+	int flag = 0;
+
+	    if(listCliente!=NULL)
+	    {
+	    	for(int i=0;i<MAXCLIENT;i++)
+	    	    {
+	                if(listCliente[i].isEmpty==FULL)
+	    	            {
+	    	            	for(int j=0;j<MAXCLIENT;j++)
+	    	            	{
+	    	            		if(listCliente[i].id == listPedidos[j].idCliente && listPedidos[j].isEmpty==FULL && listPedidos[j].pedido==COMPLETADO)
+	    	            		{
+	    	            			completado++;
+	    	            		}
+	    	            	}
+
+	    	            	if(flag==0)
+	    	            	{
+	    	            		maximo = completado;
+	    	            		maximoPosicion = i;
+	    	            		flag=1;
+	    	            	}
+
+	    	            	if(completado>maximo)
+	    	            	{
+	    	            		maximo = completado;
+	    	            		maximoPosicion = i;
+	    	            	}
+
+	    	            }
+
+	    	        }
+
+	    	printf("\nEl cliente con mas pedidos completos es: %s\n",listCliente[maximoPosicion].nombre);
+	        retorno=0;
+	    }
+	    return retorno;
+}
 
 

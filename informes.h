@@ -16,4 +16,5 @@ int printPedidosPendientesPorLocalidad(ePedido* listPedidos, eCliente* listClien
 int printClientesPromedioPP(ePedido* listPedidos, eCliente* listClientes);
 void orderClientByName(ePedido* arrayAux);
 int masPedidosPendientes(eCliente* listCliente, ePedido* listPedidos);
+int masPedidosCompletados(eCliente* listCliente, ePedido* listPedidos);
 #endif // INFORMES_H_INCLUDED
