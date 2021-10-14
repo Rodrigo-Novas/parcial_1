@@ -100,7 +100,7 @@ int printPedidosPendientesPorLocalidad(ePedido* listPedidos, eCliente* listClien
                 {
                     if(listClientes[j].id == listPedidos[i].idCliente){
                         if(listPedidos[i].pedido == PENDIENTE){
-                            if(strcmp(localidad, listClientes[j].localidad) == 0){
+                            if(strcmp(localidad, listClientes[j].localidad.localidadAux) == 0){
                                 printPedido(listPedidos, i);
                                 contador++;
                                 retorno = contador;
@@ -206,7 +206,63 @@ int cantRecoleccionPendiente(ePedido* listPedidos){
     return contador;
 }
 
+/** \brief Cliente con mas pedidos pendientes
+ *
+ * \param ePedido* arrayAux
+ * \return void
+ *
+ */
 
+
+int masPedidosPendientes(eCliente* listCliente, ePedido listPedidos)
+{
+
+
+	int retorno=-1;
+	int pendientes = 0;
+	int maximo = 0;
+	int maximoPosicion;
+	int contador = 0;
+
+	    if(listCliente!=NULL)
+	    {
+	    	for(int i=0;i<MAXCLIENT;i++)
+	    	    {
+//	    			if(array[i].isEmpty==EMPTY)
+//	    	          {
+//	    	            continue;
+//	    	          }
+	                if(listCliente[i].isEmpty==FULL)
+	    	            {
+	    	            	for(int j=0;j<MAXCLIENT;j++)
+	    	            	{
+
+	    	            	}
+
+	    	            	if(contador==0)
+	    	            	{
+	    	            		maximo = pendientes;
+	    	            		maximoPosicion = i;
+	    	            		contador++;
+	    	            	}
+
+	    	            	if(pendientes>maximo)
+	    	            	{
+	    	            		maximo = pendientes;
+	    	            		maximoPosicion = i;
+	    	            	}
+
+	    	            	pendientes=0;
+
+	    	            }
+
+	    	        }
+
+	    	printf("\n------------------------------\nCLIENTE CON MAS PEDIDOS PENDIENTES: %s\nCANTIDAD DE PEDIDOS PENDIENTES: %d",listCliente[posicionPendienteMaximo].nombre,maximo);
+	        retorno=0;
+	    }
+	    return retorno;
+}
 
 
 

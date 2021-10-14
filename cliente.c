@@ -72,7 +72,7 @@ int addCliente(eCliente* listCliente,char* nombre, char* cuit, char* direccion, 
             strcpy(listCliente[clienteLibre].cuit, cuit);
             strcpy(listCliente[clienteLibre].nombre, nombre);
             strcpy(listCliente[clienteLibre].direccion, direccion);
-            strcpy(listCliente[clienteLibre].localidad, localidad);
+            strcpy(listCliente[clienteLibre].localidad.localidadAux, localidad);
             listCliente[clienteLibre].isEmpty = FULL;
             listCliente[clienteLibre].id = generateNextId();
             retorno = listCliente[clienteLibre].id;
@@ -96,7 +96,7 @@ int printCliente(eCliente* listClientes, int id)
     {
         if(listClientes[id].isEmpty== FULL)
         {
-            printf("%5d %20s %20s %20s %20s \n", listClientes[id].id, listClientes[id].cuit, listClientes[id].nombre, listClientes[id].direccion, listClientes[id].localidad);
+            printf("%5d %20s %20s %20s %20s \n", listClientes[id].id, listClientes[id].cuit, listClientes[id].nombre, listClientes[id].direccion, listClientes[id].localidad.localidadAux);
             retorno=0;
         }
     }
@@ -191,7 +191,7 @@ int modifyEmployee(eCliente* listCliente, int id, char* localidad, char* direcci
         if (posicionCliente != -1){
             if(listCliente[id].isEmpty == FULL){
                 strcpy(listCliente[id].direccion, direccion);
-                strcpy(listCliente[id].localidad, localidad);
+                strcpy(listCliente[id].localidad.localidadAux, localidad);
                 retorno = 0;
             }
         }

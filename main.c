@@ -35,14 +35,14 @@ int main()
     int flagPedidos = 0;
     int idClientePedidos;
     float kilo;
-
+    int auxPrintMasPendientes;
 //    //Mock hardcodeado
-    eCliente listClientes[MAXCLIENT]= {{0,FULL,"Telefonica","30112233445","Lima 1234", "CABA"},
-                                            {1,FULL,"DATASOFT","30445566776","Corrientes 2547","CABA"},
-                                            {2,FULL,"NESTLE","30889955219","cucha cucha 555","LANUS"},
-                                            {3,FULL,"TERRABUSI","30567814235","rocha 784","LANUS"},
-                                            {4,FULL,"DIA","31545812533","Mitre 750","AVELLANEDA"},
-                                            {5,FULL,"QUILMES","30514857596","rocha 741","QUILMES"}
+    eCliente listClientes[MAXCLIENT]= {{0,FULL,"DADAPHONE","30111221413","SAENZ 1234", "CABA"},
+                                            {1,FULL,"FABRIC","30445566776","FALCAO 289","CABA"},
+                                            {2,FULL,"MIRAMAR","30882342342","LIBERIA 3232","LANUS"},
+                                            {3,FULL,"KICKOFF","305345345345","rocha 784","LANUS"},
+                                            {4,FULL,"GUTENBIER","31534534535","Mitre 750","AVELLANEDA"},
+                                            {5,FULL,"PALMAS","303534534534","rocha 741","QUILMES"}
                                             };
     ePedido listPedidos[MAXPEDIDOS]= {{0,1,FULL,1000,200,145,230,COMPLETADO},
                                         {1,1,FULL,800,210,45,30,COMPLETADO},
@@ -243,6 +243,12 @@ int main()
                 system("cls");
                 break;
             case 11:
+                printf("\n-----Max pedidos pendientes-------\n");
+                auxPrintMasPendientes = masPedidosPendientes(listClientes, listPedidos);
+                if(auxPrintClientes == -1){
+                    printf("No se encuentran clientes!\n");
+                }
+            case 12:
                 printf("\n-----Clientes-------\n");
                 auxPrintClientes = printClientes(listClientes);
                 if(auxPrintClientes == -1){
@@ -256,7 +262,7 @@ int main()
                 system("pause");
                 system("cls");
                 break;
-            case 12:
+            case 13:
                 printf (" Gracias por utilizar el sistema! \n");
                 break;
 
@@ -265,7 +271,7 @@ int main()
                 system("pause");
                 break;
                 }
-        }while(option!=12);
+        }while(option!=13);
         return option;
     }
 }

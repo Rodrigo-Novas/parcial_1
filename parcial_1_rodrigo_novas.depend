@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1634060293 source:c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\menu.c
+1634250588 source:c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\menu.c
 	"menu.h"
 
 1633896682 c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\menu.h
@@ -16,7 +16,7 @@
 	<string.h>
 	<time.h>
 
-1634235497 source:c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\main.c
+1634239444 source:c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -25,14 +25,14 @@
 	"pedidos.h"
 	"informes.h"
 
-1634229217 c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\cliente.h
+1634249577 c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\cliente.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<conio.h>
 	"utn.h"
 
-1634236805 source:c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\cliente.c
+1634249479 source:c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\cliente.c
 	"cliente.h"
 
 1634229214 c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\pedidos.h
@@ -50,6 +50,6 @@
 	"pedidos.h"
 	"cliente.h"
 
-1634239349 source:c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\informes.c
+1634249512 source:c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\informes.c
 	"informes.h"
 

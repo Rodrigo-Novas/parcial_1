@@ -9,6 +9,11 @@
 #define MAXLEN 51
 #define MAXCLIENT 6
 
+typedef struct{
+    char localidadAux[MAXLEN];
+
+} eLocalidad;
+
 
 typedef struct{
     int id;
@@ -16,8 +21,10 @@ typedef struct{
     char nombre[MAXLEN];
     char cuit[MAXLEN];
     char direccion[MAXLEN];
-    char localidad[MAXLEN];
+    eLocalidad localidad;
 } eCliente;
+
+
 
 int initCliente(eCliente* listClientes);
 int freeSpaceCliente(eCliente* listCliente);

@@ -20,13 +20,14 @@ int menu()
            " 8. Imprimir pedidos procesados (Por tipo)\n"
            " 9. Imprimir cantidad de pedidos pendientes para dicha localidad\n"
            " 10. Cantidad de kilos de polipropileno reciclado promedio por cliente. (kilos totales / cantidad de clientes)\n"
-           " 11. Imprimir clientes y pedidos por separado\n"
-           " 12. Salir\n"
+           " 11. Clientes con maximo pendientes\n"
+           " 12. Imprimir clientes y pedidos por separado\n"
+           " 13. Salir\n"
            " Ingrese una opcion: ");
     fflush(stdin);
     scanf("%d", &option);
 
-    while(option <= 0 || option > 12)
+    while(option <= 0 || option > 13)
     {
         printf(" Por favor, ingrese una opcion del 1 al 11\n");
         system("pause");
@@ -43,8 +44,9 @@ int menu()
            " 8. Imprimir pedidos procesados (Por tipo)\n"
            " 9. Imprimir cantidad de pedidos pendientes para dicha localidad\n"
            " 10. Cantidad de kilos de polipropileno reciclado promedio por cliente. (kilos totales / cantidad de clientes)\n"
-           " 11. Imprimir clientes y pedidos por separado\n"
-           " 12. Salir\n"
+           " 11. Clientes con maximo pendientes\n"
+           " 12. Imprimir clientes y pedidos por separado\n"
+           " 13. Salir\n"
            " Ingrese una opcion: ");
         fflush(stdin);
         scanf("%d", &option);
