@@ -230,8 +230,6 @@ int main()
                 else{
                     printf("\n La cantidad de pedidos pendientes en la localidad %s es: %d\n",localidad , auxPedidoProcesadosPorLocalidad);
                 }
-                system("pause");
-                system("cls");
                 break;
             case 10:
                 printf("\nPromedio de kilos PP por cliente: \n\n");
@@ -245,9 +243,12 @@ int main()
             case 11:
                 printf("\n-----Max pedidos pendientes-------\n");
                 auxPrintMasPendientes = masPedidosPendientes(listClientes, listPedidos);
-                if(auxPrintClientes == -1){
+                if(auxPrintMasPendientes == -1){
                     printf("No se encuentran clientes!\n");
                 }
+                system("pause");
+                system("cls");
+                break;
             case 12:
                 printf("\n-----Clientes-------\n");
                 auxPrintClientes = printClientes(listClientes);

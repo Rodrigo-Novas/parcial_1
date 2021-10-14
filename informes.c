@@ -214,7 +214,7 @@ int cantRecoleccionPendiente(ePedido* listPedidos){
  */
 
 
-int masPedidosPendientes(eCliente* listCliente, ePedido listPedidos)
+int masPedidosPendientes(eCliente* listCliente, ePedido* listPedidos)
 {
 
 
@@ -228,15 +228,18 @@ int masPedidosPendientes(eCliente* listCliente, ePedido listPedidos)
 	    {
 	    	for(int i=0;i<MAXCLIENT;i++)
 	    	    {
-//	    			if(array[i].isEmpty==EMPTY)
-//	    	          {
-//	    	            continue;
-//	    	          }
+	    			if(listCliente[i].isEmpty==EMPTY)
+	    	          {
+	    	            continue;
+	    	          }
 	                if(listCliente[i].isEmpty==FULL)
 	    	            {
 	    	            	for(int j=0;j<MAXCLIENT;j++)
 	    	            	{
-
+	    	            		if(listCliente[i].id == listPedidos[j].idCliente && listPedidos[j].isEmpty==FULL && listPedidos[j].pedido==PENDIENTE)
+	    	            		{
+	    	            			pendientes++;
+	    	            		}
 	    	            	}
 
 	    	            	if(contador==0)
@@ -258,7 +261,7 @@ int masPedidosPendientes(eCliente* listCliente, ePedido listPedidos)
 
 	    	        }
 
-	    	printf("\n------------------------------\nCLIENTE CON MAS PEDIDOS PENDIENTES: %s\nCANTIDAD DE PEDIDOS PENDIENTES: %d",listCliente[posicionPendienteMaximo].nombre,maximo);
+	    	printf("\nEl cliente con mas pedidos pendientes es: %s\nla cantidad de pendientes es: %d\n",listCliente[maximoPosicion].nombre,maximo);
 	        retorno=0;
 	    }
 	    return retorno;
