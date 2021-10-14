@@ -222,16 +222,12 @@ int masPedidosPendientes(eCliente* listCliente, ePedido* listPedidos)
 	int pendientes = 0;
 	int maximo = 0;
 	int maximoPosicion;
-	int contador = 0;
+	int flag = 0;
 
 	    if(listCliente!=NULL)
 	    {
 	    	for(int i=0;i<MAXCLIENT;i++)
 	    	    {
-	    			if(listCliente[i].isEmpty==EMPTY)
-	    	          {
-	    	            continue;
-	    	          }
 	                if(listCliente[i].isEmpty==FULL)
 	    	            {
 	    	            	for(int j=0;j<MAXCLIENT;j++)
@@ -242,11 +238,11 @@ int masPedidosPendientes(eCliente* listCliente, ePedido* listPedidos)
 	    	            		}
 	    	            	}
 
-	    	            	if(contador==0)
+	    	            	if(flag==0)
 	    	            	{
 	    	            		maximo = pendientes;
 	    	            		maximoPosicion = i;
-	    	            		contador++;
+	    	            		flag=1;
 	    	            	}
 
 	    	            	if(pendientes>maximo)
