@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1634060293 source:c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\menu.c
+	"menu.h"
+
+1633896682 c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1633988269 source:c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\utn.c
+	"utn.h"
+
+1633987804 c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\utn.h
+	<stdio.h>
+	<string.h>
+	<time.h>
+
+1634235497 source:c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"utn.h"
+	"cliente.h"
+	"pedidos.h"
+	"informes.h"
+
+1634229217 c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\cliente.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"utn.h"
+
+1634236805 source:c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\cliente.c
+	"cliente.h"
+
+1634229214 c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\pedidos.h
+	"utn.h"
+
+1634236742 source:c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\pedidos.c
+	"pedidos.h"
+
+1634166111 c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\informes.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"utn.h"
+	"pedidos.h"
+	"cliente.h"
+
+1634239349 source:c:\users\novasrodrigo\desktop\parcial_1\parcial_1_rodrigo_novas\informes.c
+	"informes.h"
+

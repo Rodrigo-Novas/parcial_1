@@ -1,0 +1,178 @@
+#include "informes.h"
+
+
+void printClientesPedidosPendientes(ePedido* listPedidos, eCliente* listClientes){
+
+    int cantidadPendientes = cantRecoleccionPendiente(listPedidos);
+    printClientes(listClientes);
+    printf("La cantidad de pedidos con estado pendiente es de: %d\n", cantidadPendientes);
+
+}
+
+int printPedidosPendientes(ePedido* listPedidos, eCliente* listClientes){
+
+    int retorno=-1;
+    if (listPedidos!=NULL && listClientes!=NULL)
+    {
+
+        for ( int i=1; i<=MAXPEDIDOS; i++)
+        {
+            for ( int j=1; j<=MAXCLIENT; j++){
+                if(listPedidos[i].isEmpty == FULL && listClientes[j].isEmpty == FULL)
+                {
+                    if(listClientes[j].id == listPedidos[i].idCliente){
+                        if(listPedidos[i].pedido == PENDIENTE){
+                            printf("Cuit: %s\t Direccion: %s\t Kilos: %.2f \n", listClientes[j].cuit, listClientes[j].direccion, listPedidos[i].kilo);
+                            retorno = 0;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+    return retorno;
+}
+
+
+int printPedidosProcesadosPorTipo(ePedido* listPedidos, eCliente* listClientes){
+
+    int retorno=-1;
+    if (listPedidos!=NULL && listClientes!=NULL)
+    {
+
+        for ( int i=1; i<=MAXPEDIDOS; i++)
+        {
+            for ( int j=1; j<=MAXCLIENT; j++){
+                if(listPedidos[i].isEmpty == FULL && listClientes[j].isEmpty == FULL)
+                {
+                    if(listClientes[j].id == listPedidos[i].idCliente){
+                        if(listPedidos[i].pedido == COMPLETADO){
+                            printf("Cuit: %s\t Direccion: %20s\t Kilo HDPE: %.2f \n Kilo LDPE: %.2f \n Kilo PP: %.2f \n", listClientes[j].cuit, listClientes[j].direccion, listPedidos[i].HDPE, listPedidos[i].LDPE, listPedidos[i].PP);
+                            retorno = 0;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+    return retorno;
+}
+
+
+int printPedidosPendientesPorLocalidad(ePedido* listPedidos, eCliente* listClientes, char* localidad){
+
+    int retorno=-1;
+    int contador=0;
+    if (listPedidos!=NULL && listClientes!=NULL)
+    {
+
+        for ( int i=1; i<=MAXPEDIDOS; i++)
+        {
+            for ( int j=1; j<=MAXCLIENT; j++){
+                if(listPedidos[i].isEmpty == FULL && listClientes[j].isEmpty == FULL)
+                {
+                    if(listClientes[j].id == listPedidos[i].idCliente){
+                        if(listPedidos[i].pedido == PENDIENTE){
+                            if(strcmp(localidad, listClientes[j].localidad) == 0){
+                                printPedido(listPedidos, i);
+                                contador++;
+                                retorno = contador;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+    return retorno;
+}
+
+
+int printClientesPromedioPP(ePedido* listPedidos, eCliente* listClientes){
+
+    int retorno=-1;
+    ePedido auxPedido[MAXPEDIDOS];
+
+    for(int f=0; f<MAXPEDIDOS; f++){
+        auxPedido[f] = listPedidos[f];
+    }
+    orderClientByName(auxPedido);
+
+//    int contadorPP=0;
+//    int sumaKilos = 0;
+//    float promedio=0;
+//    char nombreCliente[MAXLEN];
+//    int auxArray[MAXCLIENT];
+//    if (listPedidos!=NULL && listClientes!=NULL)
+//    {
+//
+//        for (int i=1; i<=MAXPEDIDOS; i++){
+//
+//            for ( int j=1; j<=MAXCLIENT; j++){
+//                if(listPedidos[i].isEmpty == FULL && listClientes[j].isEmpty == FULL)
+//                {
+//                    //printf("id %d id Cliente %d", listClientes[j].id, listPedidos[i].idCliente);
+//                    if(listClientes[j].id == listPedidos[i].idCliente){
+//                        if(listPedidos[i].pedido == COMPLETADO){
+//                        if(listPedidos[i].PP != 0){
+//                                contadorPP++;
+//                                sumaKilos = listPedidos[i].kilo + sumaKilos;
+//                                strcpy(nombreCliente, listClientes[j].nombre);
+//                                retorno = 0;
+//                            }
+//                        }
+//
+//                    }
+//                }
+//
+//            }
+//        }
+//    }
+//        promedio = sumaKilos / contadorPP;
+//        printf("\nEl promedio del cliente %s es: %f\n", nombreCliente, promedio);
+//        promedio = 0;
+    return retorno;
+}
+
+void orderClientByName(ePedido* arrayAux){
+
+    for(int n = 0; n < MAXPEDIDOS; n++) {
+          printf("\n%d\n",arrayAux[n].idCliente);
+       }
+    for (int j = 0; j < MAXPEDIDOS - 1; j++) {
+        for (int i = j + 1; i < MAXPEDIDOS; i++) {
+            if (arrayAux[j].idCliente>= arrayAux[i].idCliente) {
+                int temp;
+                temp = arrayAux[j].idCliente;
+                arrayAux[j].idCliente = arrayAux[i].idCliente;
+                arrayAux[i].idCliente = temp;
+            }
+        }
+    }
+}
+
+int cantRecoleccionPendiente(ePedido* listPedidos){
+
+    int contador=0;
+    if (listPedidos!=NULL)
+    {
+        for ( int i=1; i<=MAXPEDIDOS; i++)
+        {
+            if(listPedidos[i].isEmpty == FULL)
+            {
+                if(listPedidos[i].pedido == PENDIENTE){
+                contador ++;
+                }
+            }
+        }
+    }
+    return contador;
+}
+
+
+
+
+
