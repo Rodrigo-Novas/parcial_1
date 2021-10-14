@@ -251,7 +251,7 @@ int masPedidosPendientes(eCliente* listCliente, ePedido* listPedidos)
 	    	            		maximoPosicion = i;
 	    	            	}
 
-
+                            pendientes = 0;
 	    	            }
 
 	    	        }
@@ -310,7 +310,7 @@ int masPedidosCompletados(eCliente* listCliente, ePedido* listPedidos)
 	    	            		maximo = completado;
 	    	            		maximoPosicion = i;
 	    	            	}
-
+                            completado = 0;
 	    	            }
 
 	    	        }

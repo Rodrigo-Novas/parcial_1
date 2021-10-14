@@ -50,7 +50,7 @@ int main()
                                         {2,2,FULL,100,0,0,0,PENDIENTE},
                                         {3,2,FULL,300,0,0,0,PENDIENTE},
                                         {4,3,FULL,1500,500,150,270,COMPLETADO},
-                                        {5,3,FULL,750,100,50,70,COMPLETADO},
+                                        {5,1,FULL,750,100,50,70,COMPLETADO},
                                         {6,1,FULL,200,0,0,0,PENDIENTE},
                                         {7,3,FULL,30,10,5,3,COMPLETADO},
                                         {8,5,FULL,456,0,0,0,PENDIENTE}};
